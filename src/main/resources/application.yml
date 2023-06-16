@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: tool-box
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: zjj20001031
+    url: jdbc:mysql://localhost:3306/tool_box?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  docker:
+    compose:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: on
+
+
+server:
+  shutdown: graceful
+  port: 1111
+
+

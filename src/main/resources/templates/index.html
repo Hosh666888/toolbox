@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tool-box</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div id="select">
+        <div>account</div>
+        <div>money</div>
+        <div>{{msg}}</div>
+    </div>
+
+    <div id="showCase">
+        <MoneyLogs/>
+    </div>
+</div>
+
+<script text="text/javascript">
+    Vue.use(httpVueLoader)
+    new Vue({
+        el: '#app',
+        data: {
+            msg: new Date()
+        },
+        components: {
+            MoneyLogs: httpVueLoader('./component/MoneyLogs.vue')
+        }
+    })
+</script>
+</body>
+</html>
